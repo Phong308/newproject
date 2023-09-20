@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <h1>Chuyển đổi tiền tệ</h1>
+    <form id="currencyConverter">
+        <label for="fromCurrency">From Currency:</label>
+        <select id="fromCurrency">
+            <option value="VND">Vietnamese Dong (VND)</option>
+            <option value="USD">US Dollar (USD)</option>
+            <!-- Thêm các đồng tiền gốc khác nếu cần -->
+        </select>
+        <br>
+        <label for="toCurrency">To Currency:</label>
+        <select id="toCurrency">
+            <option value="USD">US Dollar (USD)</option>
+            <option value="VND">Vietnamese Dong (VND)</option>
+            <!-- Thêm các đồng tiền muốn chuyển đổi sang khác nếu cần -->
+        </select>
+        <br>
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" step="0.01" required>
+        <br>
+        <button type="button" onclick="convertCurrency()">Convert</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function convertCurrency() {
+        // Lấy thông tin từ người dùng
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        let amount = parseFloat(document.getElementById("amount").value);
+
+        // Gọi API hoặc thực hiện tính toán chuyển đổi ở đây (ví dụ: tạo một bảng chuyển đổi)
+        // Đây là một ví dụ đơn giản về bảng chuyển đổi
+        const exchangeRate = {
+            "VND_USD": 0.000043, // Tỷ giá VND sang USD
+            "USD_VND": 23130 // Tỷ giá USD sang VND
+            // Thêm các tỷ giá chuyển đổi khác nếu cần
+        };
+
+        let result;
+        if (fromCurrency + "_" + toCurrency in exchangeRate) {
+            result = amount * exchangeRate[fromCurrency + "_" + toCurrency];
+        } else {
+            result = "Không tìm thấy tỷ giá chuyển đổi.";
+        }
+
+        // Hiển thị kết quả
+        document.getElementById("result").textContent = `Kết quả: ${result.toFixed(2)} ${toCurrency}`;
+    }
+
+    </script>
+</body>
+</html>
