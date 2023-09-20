@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bức Thư Của Marilyn Monroe</title>
+</head>
+<body>
+    <h1>Bức Thư Của Marilyn Monroe</h1>
+    <form id="letterForm">
+        <label for="recipient">Tên người nhận:</label>
+        <input type="text" id="recipient" required>
+        <br>
+        <label for="location">Địa điểm:</label>
+        <input type="text" id="location" required>
+        <br>
+        <label for="date">Thời gian:</label>
+        <input type="text" id="date" required>
+        <br>
+        <button type="button" onclick="generateLetter()">Tạo Bức Thư</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function generateLetter() {
+    // Lấy thông tin từ người dùng
+    let recipient = document.getElementById("recipient").value;
+    let location = document.getElementById("location").value;
+    let date = document.getElementById("date").value;
+
+    // Tạo nội dung bức thư
+    let letter = recipient + " thương nhớ,\n\n" +
+        "Em không biết phải nói sao để anh hiểu rằng, em nhớ anh thật nhiều. Em yêu anh đến khi trái tim này tan thành nghìn mảnh. Tất cả những gì em yêu thương, em khát khao và cần đến, chính là anh, mãi mãi về sau. Em chỉ muốn ở bên anh, và anh yêu hỡi, em sẽ trở thành người phụ nữ như anh mong muốn.\n\n" +
+        "Có phải em thật tệ hại, khi cứ nghĩ đến anh thật nhiều, thật lâu và nhất là mỗi khi đêm xuống? Em hứa sẽ sẽ cố gắng triệu triệu lần hơn thế. Nhưng hơn tất cả, em chỉ mong một ngày nào đó, anh sẽ tự hào về em, như tự hào về vợ của anh, và mẹ của các con anh (ít nhất là 2 nhé, em vừa mới quyết định đấy!). Em nhớ thật nhiều cảm giác mỗi đêm anh ôm em và ru em ngủ trong vòng tay. Đêm nay, em chỉ muốn được gần bên anh… và anh biết không, trái tim em đang đau đớn đến nhường nào.\n\n" +
+        "Anh yêu thương, đừng bao giờ rời xa em nữa nhé. Yêu anh rất nhiều.\n\n" +
+        location + ", " + date + ".";
+
+    // Hiển thị bức thư
+    document.getElementById("result").textContent = letter;
+}
+
+    </script>
+</body>
+</html>
