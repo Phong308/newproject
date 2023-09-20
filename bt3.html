@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web với Tệp JavaScript Riêng</title>
+</head>
+<body>
+    <button type="button" id="btn">Click Me!</button>
+
+    <script>
+    function showMessage() {
+        alert('Xin chào!');
+    }
+
+    // Lấy tham chiếu đến nút bằng cách sử dụng id
+    const button = document.getElementById("btn");
+
+    // Thêm sự kiện click cho nút để gọi hàm showMessage
+    button.addEventListener("click", showMessage);
+    </script>
+</body>
+</html>
