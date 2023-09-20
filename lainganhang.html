@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tiengoc = +prompt("nhap tien goc:")
+        let lai = +prompt("nhap lai: ")
+        let tienlai = soNam*lai/100*tiengoc;
+        let tongtien = tiengoc + tienlai;
+        console.log(tongtien);
+
+        let laikep = tiengoc*(1+lai/100)**soNam
+        alert(laikep);
+    </script>
+</body>
+</html>
