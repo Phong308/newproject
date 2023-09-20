@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let thang = +prompt("Nhập vào tháng: ");
+        if (thang == 2) {
+            alert("Thang 2 co 28 hoac 29 ngay")
+        }
+        if (thang % 2 != 0 && thang <= 7) {
+            alert("Thang co 31 ngay");
+        }else if (thang % 2 == 0 && thang > 7 && thang <= 12) {
+            alert("Thang co 31 ngay");
+        } else {
+            alert("Thang co 30 ngay")
+        } 
+        
+
+
+    </script>
+    
+</body>
+</html>
