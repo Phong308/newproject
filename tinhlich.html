@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm âm lịch</title>
+</head>
+<body>
+    <h1>Tính năm âm lịch</h1>
+    <form>
+        <label for="namDuongLich">Nhập năm dương lịch:</label>
+        <input type="number" id="namDuongLich">
+        <button onclick="calculateLunarYear()">Tính năm âm lịch</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateLunarYear() {
+            // Lấy năm dương lịch từ người dùng
+            var namDuongLich = parseInt(document.getElementById("namDuongLich").value);
+
+            // Tính Can và Chi dựa trên phần dư
+            var can = namDuongLich % 10;
+            var chi = namDuongLich % 12;
+
+            // Ánh xạ Can và Chi với các giá trị tương ứng
+            var canValues = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
+            var chiValues = ["Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mẹo", "Thìn", "Tỵ", "Ngọ", "Mùi"];
+
+            var canResult = canValues[can];
+            var chiResult = chiValues[chi];
+
+            // Tính năm âm lịch bằng cách cộng Can và Chi
+            var namAmLich = canResult + " " + chiResult;
+
+            // Hiển thị kết quả
+            document.getElementById("result").textContent = "Năm âm lịch tương ứng với năm " + namDuongLich + " là: " + namAmLich;
+        }
+    </script>
+</body>
+</html>
