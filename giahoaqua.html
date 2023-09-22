@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu giá hoa quả</title>
+</head>
+<body>
+    <h1>Tra cứu giá hoa quả</h1>
+    <label for="fruitInput">Nhập tên loại hoa quả:</label>
+    <input type="text" id="fruitInput">
+    <button onclick="checkPrice()">Xem giá</button>
+    <p id="result"></p>
+
+    <script>
+        // Dữ liệu về giá hoa quả
+        var fruitPrices = {
+            "Ổi": 20000,
+            "Dưa Hấu": 20000,
+            "Táo": 30000,
+            "Xoài": 30000,
+            "Cam": 40000,
+            "Chôm Chôm": 40000,
+            "Măng Cụt": 50000
+        };
+
+        function checkPrice() {
+            // Lấy tên hoa quả từ người dùng
+            var fruitName = document.getElementById("fruitInput").value;
+            
+            // Kiểm tra xem hoa quả có tồn tại trong dữ liệu không
+            if (fruitPrices.hasOwnProperty(fruitName)) {
+                var price = fruitPrices[fruitName];
+                document.getElementById("result").textContent = "Giá của " + fruitName + " là " + price + " VNĐ/kg";
+            } else {
+                document.getElementById("result").textContent = "Không tìm thấy thông tin cho loại hoa quả này.";
+            }
+        }
+    </script>
+</body>
+</html>
