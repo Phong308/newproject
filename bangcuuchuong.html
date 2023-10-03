@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bảng cửu chương</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Hàm tạo và hiển thị bảng cửu chương với định dạng
+        function createMultiplicationTable() {
+            const tableDiv = document.getElementById("tableDiv");
+            const table = document.createElement("table");
+            const tbody = document.createElement("tbody");
+
+            for (let i = 2; i <= 9; i++) {
+                const row = document.createElement("tr");
+                for (let j = 1; j <= 9; j++) {
+                    const cell = document.createElement(j === 1 ? "th" : "td");
+                    const result = i * j;
+                    cell.textContent = `${i}x${j} = ${result}`;
+                    row.appendChild(cell);
+                }
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            tableDiv.innerHTML = "";
+            tableDiv.appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <h1>Bảng cửu chương</h1>
+    <button onclick="createMultiplicationTable()">Hiển thị Bảng</button>
+    <div id="tableDiv"></div>
+</body>
+</html>
